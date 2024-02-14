@@ -2,7 +2,7 @@
     export default {
         props: {
             texto: { type: String, required: true },
-            ativa: { type: Boolean, default: false }
+            ativa: { type: Boolean, default: true }
         }
     }
 </script>
