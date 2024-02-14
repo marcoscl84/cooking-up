@@ -1,29 +1,17 @@
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import SelecionarIngredientes from './SelecionarIngredientes.vue';
 import SuaLista from './SuaLista.vue';
 
-export default {
-  setup() {
-    const ingredientes = ref<string[]>([]);
+const ingredientes = ref<string[]>([]);
 
-    function adicionarIngrediente(ingrediente: string) {
-      ingredientes.value.push(ingrediente)
-    }
-    function removerIngrediente(ingrediente: string) {
-      ingredientes.value = ingredientes.value.filter(iLista => ingrediente !== iLista);
-    }
-
-    return {
-      ingredientes,
-      adicionarIngrediente,
-      removerIngrediente
-    }
-  },
-  components: { SelecionarIngredientes, SuaLista },
+function adicionarIngrediente(ingrediente: string) {
+  ingredientes.value.push(ingrediente)
+}
+function removerIngrediente(ingrediente: string) {
+  ingredientes.value = ingredientes.value.filter(iLista => ingrediente !== iLista);
 }
 </script>
-
 
 
 <template>
