@@ -34,17 +34,20 @@ export default {
         <section>
             <SuaLista :ingredientes="ingredientes" />
 
-            <SelecionarIngredientes 
-              v-if="conteudo === 'SelecionarIngredientes'"
-              @adicionar-ingrediente="adicionarIngrediente"
-              @remover-ingrediente="removerIngrediente"
-              @buscar-receitas="navegar('MostrarReceitas')"
-            />
+            <KeepAlive include="SelecionarIngredientes">
+              <SelecionarIngredientes 
+                v-if="conteudo === 'SelecionarIngredientes'"
+                @adicionar-ingrediente="adicionarIngrediente"
+                @remover-ingrediente="removerIngrediente"
+                @buscar-receitas="navegar('MostrarReceitas')"
+              />
 
-            <MostrarReceitas
-              v-else-if="conteudo === 'MostrarReceitas'"
-              @editar-receitas="navegar('SelecionarIngredientes')"
-            />
+              <MostrarReceitas
+                v-else-if="conteudo === 'MostrarReceitas'"
+                @editar-receitas="navegar('SelecionarIngredientes')"
+              />
+            </KeepAlive>
+            
 
         </section>
     </main>
