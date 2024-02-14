@@ -1,0 +1,3 @@
+<template>
+    mostrnado receitas
+</template>
