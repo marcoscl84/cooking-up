@@ -43,7 +43,9 @@ export default {
 
             <MostrarReceitas
               v-else-if="conteudo === 'MostrarReceitas'"
+              @editar-receitas="navegar('SelecionarIngredientes')"
             />
+
         </section>
     </main>
 </template>
